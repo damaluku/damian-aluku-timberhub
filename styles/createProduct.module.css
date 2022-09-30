@@ -1,5 +1,5 @@
 .container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -23,7 +23,82 @@
   height: 100%;
 }
 
-.inputsBox {
+.form button {
+  position: absolute;
+  right: 25px;
+  bottom: 21px;
+  background: #23d899;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.form button:hover {
+  background: black;
+  color: white;
+}
+
+.form label {
+  font-size: 20px;
+}
+
+.inputBoxes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.inputBoxes div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.inputBoxes div select {
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+
+.inputBoxes div select option {
+  color: red;
+}
+
+.sawnTimber {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid #d6d6d5;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.subheading {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.close {
+  position: absolute;
+  left: 28px;
+  bottom: 21px;
+  border: transparent;
+  cursor: pointer;
+
+  font-family: "Mukta Mahee";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.close:hover {
+  color: #23d899;
 }

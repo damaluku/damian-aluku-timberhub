@@ -15,21 +15,26 @@ const handler = (req, res, next) => {
     const length = req.body.length;
 
     const newProduct = {
-      id: Date.now(),
-      created: Date.now(),
-      usage: `${usage}`,
-      species: `${specie}`,
-      drying_method: `${drying}`,
-      grade: `${grade}`,
-      treatment: `${treatment}`,
-      dimensions: [
+      rows: [
         {
-          thickness: `${thickness}`,
-          width: `${width}`,
-          length: `${length}`,
+          id: Date.now().toLocaleString(),
+          created: Date.now().toLocaleString(),
+          usage: `${usage}`,
+          species: `${specie}`,
+          drying_method: `${drying}`,
+          grade: `${grade}`,
+          treatment: `${treatment}`,
+          dimensions: [
+            {
+              thickness: `${thickness}`,
+              width: `${width}`,
+              length: `${length}`,
+            },
+          ],
         },
       ],
     };
+
     people.push(newProduct);
     res.status(201).json(newProduct);
   }

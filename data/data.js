@@ -15,11 +15,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -35,11 +30,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
@@ -61,11 +51,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -81,11 +66,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
@@ -107,11 +87,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -127,11 +102,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
@@ -153,11 +123,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -173,11 +138,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
@@ -199,11 +159,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -219,11 +174,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
@@ -245,11 +195,6 @@ export const woodDataObject = [
             width: 50,
             length: 1300,
           },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
-          },
         ],
       },
       {
@@ -265,11 +210,6 @@ export const woodDataObject = [
             thickness: 40,
             width: 50,
             length: 1300,
-          },
-          {
-            thickness: 50,
-            width: 150,
-            length: 2000,
           },
         ],
       },
