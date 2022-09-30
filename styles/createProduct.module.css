@@ -18,6 +18,10 @@
   padding: 23px;
 }
 
+.formContainer h4 {
+  border-bottom: 1px solid #d6d6d5;
+}
+
 .form {
   width: 100%;
   height: 100%;
@@ -34,11 +38,12 @@
 
 .form button:hover {
   background: black;
-  color: white;
+  color: #23d899;
+  border-color: black;
 }
 
 .form label {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .inputBoxes {
@@ -79,6 +84,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  font-size: 24px;
 }
 
 .close {

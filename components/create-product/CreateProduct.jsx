@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/createProduct.module.css";
 import { GiDeadWood } from "react-icons/gi";
+import { GiPerspectiveDiceSixFacesOne } from "react-icons/gi";
+import { GiWoodPile } from "react-icons/gi";
 
 const CreateProduct = ({ setIsCreateOpen }) => {
   const [products, setProducts] = useState([]);
@@ -24,7 +26,16 @@ const CreateProduct = ({ setIsCreateOpen }) => {
 
     fetchProducts();
     console.log(products);
-    console.log(usage);
+    console.log({
+      usage,
+      specie,
+      drying,
+      grade,
+      treatment,
+      thickness,
+      width,
+      length,
+    });
 
     const response = await fetch(`api/woodProducts`, {
       method: "POST",
@@ -74,7 +85,7 @@ const CreateProduct = ({ setIsCreateOpen }) => {
 
           <div className={styles.sawnTimber}>
             <div className={styles.subheading}>
-              <GiDeadWood />
+              <GiWoodPile />
               <h5>Specifications</h5>
             </div>
             <div className={styles.inputBoxes}>
@@ -101,7 +112,7 @@ const CreateProduct = ({ setIsCreateOpen }) => {
 
           <div className={styles.sawnTimber}>
             <div className={styles.subheading}>
-              <GiDeadWood />
+              <GiPerspectiveDiceSixFacesOne />
               <h5>Dimensions</h5>
             </div>
             <div className={styles.inputBoxes}>
