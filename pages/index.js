@@ -1,28 +1,25 @@
 import Head from "next/head";
-import Image from "next/image";
 import MidHeading from "../components/mid-Heading/MidHeading";
 import NavBar from "../components/navbar/NavBar";
 import SearchBar from "../components/search-bar/SearchBar";
 import Product from "../components/product/Product";
 import styles from "../styles/Home.module.css";
-
-import { useState, useEffect } from "react";
+import useSWR from "swr";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const fetcher = async () => {
+    const response = await fetch(`api/woodProducts`);
+    const products = response.json();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(`api/woodProducts`);
-      const data = await response.json();
-      setProducts(data);
+    return products;
+  };
 
-      // console.log(typeof data);
-      // products.map((product) => console.log(product.rows[0].id));
-    };
+  const { data, error } = useSWR("api/woodProducts", fetcher);
 
-    fetchProducts();
-  }, []);
+  const products = data;
+
+  if (error) return <div>Error: encountered while fetching!</div>;
+  if (!products) return <div>No data available yet!!</div>;
 
   return (
     <div className={styles.container}>
@@ -38,12 +35,64 @@ export default function Home() {
         <SearchBar />
 
         <div className={styles.display}>
-          <p>Product (Specie, Grade, Drying)</p>
-          {products?.map((item) => (
-            <Product key={item.rows[0].id} product={item} />
+          <div className={styles.discription}>
+            <p>Product (Specie, Grade, Drying)</p>
+            <p>Dimensions (Thickness x Width)</p>
+          </div>
+          {products?.map((item, i) => (
+            <Product key={item.rows[0].id} product={item} i={i} />
           ))}
         </div>
       </main>
     </div>
   );
 }
+
+/* const fetchProducts = async () => {
+  const response = await fetch("http://localhost:3000/api/woodProducts");
+  // const response = await fetch("api/woodProducts");
+  const data = await response.json();
+
+  return data;
+};
+
+export const getServerSideProps = async () => {
+  const products = await fetchProducts();
+
+  if (!products) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      products,
+    },
+  };
+}; */
+
+/* const fetchProducts = async () => {
+  console.log("revalidating post list...");
+  const response = await fetch("http://localhost:3000/api/woodProducts");
+  const data = await response.json();
+
+  return data;
+};
+
+export const getStaticProps = async () => {
+  const products = await fetchProducts();
+
+  if (!products) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      products,
+    },
+    revalidate: 2,
+  };
+}; */

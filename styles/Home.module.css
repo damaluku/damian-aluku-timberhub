@@ -7,3 +7,10 @@
   grid-template-columns: 1fr;
   gap: 1.5rem 0;
 }
+
+.discription {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: #707786;
+}

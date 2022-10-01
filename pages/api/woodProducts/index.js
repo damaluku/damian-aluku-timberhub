@@ -36,7 +36,7 @@ const handler = (req, res) => {
       ],
     };
 
-    people.push(newProduct);
+    woodData.push(newProduct);
     res.status(201).json(newProduct);
   }
 };

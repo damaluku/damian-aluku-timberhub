@@ -37,9 +37,11 @@ const CreateProduct = ({ setIsCreateOpen }) => {
       length,
     });
 
-    const response = await fetch(`api/woodProducts`, {
+    const response = await fetch(`/api/woodProducts`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         usage,
         specie,

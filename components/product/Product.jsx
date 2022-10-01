@@ -2,8 +2,7 @@ import React from "react";
 import { Container } from "./product.styles";
 import { GiDeadWood } from "react-icons/gi";
 
-const product = ({ product }) => {
-  // console.log(product);
+const product = ({ product, i }) => {
   return (
     <Container>
       <div className="logoContainer">
@@ -19,9 +18,9 @@ const product = ({ product }) => {
       </div>
       <div>
         <div className="dimentions">
-          <span>{product?.rows[0].dimensions[0].thickness}</span>
-          <span>{product?.rows[0].dimensions[0].width}</span>
-          <span>{product?.rows[0].dimensions[0].length}</span>
+          <span>1 {product?.rows[0].dimensions[0].thickness}</span>
+          <span>2 {product?.rows[0].dimensions[0].width}</span>
+          <span>3 {product?.rows[0].dimensions[0].length}</span>
         </div>
       </div>
     </Container>
