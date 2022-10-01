@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/createProduct.module.css";
 import { GiDeadWood } from "react-icons/gi";
 import { GiPerspectiveDiceSixFacesOne } from "react-icons/gi";
@@ -11,9 +11,9 @@ const CreateProduct = ({ setIsCreateOpen }) => {
   const [drying, setDrying] = useState("drying1");
   const [grade, setGrade] = useState("grade1");
   const [treatment, setTreatment] = useState("treatment1");
-  const [thickness, setThickness] = useState("thickness1");
-  const [width, setWidth] = useState("width1");
-  const [length, setLength] = useState("length1");
+  const [thickness, setThickness] = useState(16);
+  const [width, setWidth] = useState(49);
+  const [length, setLength] = useState(850);
 
   const fetchProducts = async () => {
     const response = await fetch(`api/woodProducts`);
@@ -26,16 +26,6 @@ const CreateProduct = ({ setIsCreateOpen }) => {
 
     fetchProducts();
     console.log(products);
-    console.log({
-      usage,
-      specie,
-      drying,
-      grade,
-      treatment,
-      thickness,
-      width,
-      length,
-    });
 
     const response = await fetch(`/api/woodProducts`, {
       method: "POST",
@@ -71,14 +61,24 @@ const CreateProduct = ({ setIsCreateOpen }) => {
             </div>
             <div className={styles.inputBoxes}>
               <div>
-                <label htmlFor="">usage*</label>
-                <select onChange={(e) => setUsage(e.target.value)}>
+                <label htmlFor="usage">usage*</label>
+                <select
+                  id="usage"
+                  name="usage"
+                  required
+                  onChange={(e) => setUsage(e.target.value)}
+                >
                   <option value={usage}>usage1</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="">wood specie*</label>
-                <select onChange={(e) => setSpecie(e.target.value)}>
+                <label htmlFor="specie">wood specie*</label>
+                <select
+                  id="specie"
+                  name="specie"
+                  required
+                  onChange={(e) => setSpecie(e.target.value)}
+                >
                   <option value={specie}>specie1</option>
                 </select>
               </div>
@@ -92,20 +92,35 @@ const CreateProduct = ({ setIsCreateOpen }) => {
             </div>
             <div className={styles.inputBoxes}>
               <div>
-                <label htmlFor="">drying*</label>
-                <select onChange={(e) => setDrying(e.target.value)}>
+                <label htmlFor="drying">drying*</label>
+                <select
+                  id="drying"
+                  name="drying"
+                  required
+                  onChange={(e) => setDrying(e.target.value)}
+                >
                   <option value={drying}>drying1</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="">grade*</label>
-                <select onChange={(e) => setGrade(e.target.value)}>
+                <label htmlFor="grade">grade*</label>
+                <select
+                  id="grade"
+                  name="grade"
+                  required
+                  onChange={(e) => setGrade(e.target.value)}
+                >
                   <option value={grade}>grade1</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="">treatment*</label>
-                <select onChange={(e) => setTreatment(e.target.value)}>
+                <label htmlFor="treatment">treatment*</label>
+                <select
+                  id="treatment"
+                  name="treatment"
+                  required
+                  onChange={(e) => setTreatment(e.target.value)}
+                >
                   <option value={treatment}>treatment1</option>
                 </select>
               </div>
@@ -119,22 +134,37 @@ const CreateProduct = ({ setIsCreateOpen }) => {
             </div>
             <div className={styles.inputBoxes}>
               <div>
-                <label htmlFor="">thickness*</label>
-                <select onChange={(e) => setThickness(e.target.value)}>
-                  <option value={thickness}>thickness1</option>
-                </select>
+                <label htmlFor="thickness">Thickness*</label>
+                <input
+                  value={thickness}
+                  type="number"
+                  name="thickness"
+                  id="thickness"
+                  required
+                  onChange={(e) => setThickness(e.target.value)}
+                />
               </div>
               <div>
-                <label htmlFor="">width</label>
-                <select onChange={(e) => setWidth(e.target.value)}>
-                  <option value={width}>width1</option>
-                </select>
+                <label htmlFor="width">width*</label>
+                <input
+                  value={width}
+                  type="number"
+                  name="width"
+                  id="width"
+                  required
+                  onChange={(e) => setWidth(e.target.value)}
+                />
               </div>
               <div>
-                <label htmlFor="">length*</label>
-                <select onChange={(e) => setLength(e.target.value)}>
-                  <option value={length}>length1</option>
-                </select>
+                <label htmlFor="length">length*</label>
+                <input
+                  value={length}
+                  type="number"
+                  name="length"
+                  id="length"
+                  required
+                  onChange={(e) => setLength(e.target.value)}
+                />
               </div>
             </div>
           </div>

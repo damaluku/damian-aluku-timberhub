@@ -1,10 +1,12 @@
 import Head from "next/head";
+import styles from "../styles/Home.module.css";
+
 import MidHeading from "../components/mid-Heading/MidHeading";
 import NavBar from "../components/navbar/NavBar";
 import SearchBar from "../components/search-bar/SearchBar";
 import Product from "../components/product/Product";
-import styles from "../styles/Home.module.css";
 import useSWR from "swr";
+import Loader from "../components/loader/Loader";
 
 export default function Home() {
   const fetcher = async () => {
@@ -18,8 +20,7 @@ export default function Home() {
 
   const products = data;
 
-  if (error) return <div>Error: encountered while fetching!</div>;
-  if (!products) return <div>No data available yet!!</div>;
+  if (error) return <div>Error encountered while fetching!!!</div>;
 
   return (
     <div className={styles.container}>
@@ -39,9 +40,13 @@ export default function Home() {
             <p>Product (Specie, Grade, Drying)</p>
             <p>Dimensions (Thickness x Width)</p>
           </div>
-          {products?.map((item, i) => (
-            <Product key={item.rows[0].id} product={item} i={i} />
-          ))}
+          {!products ? (
+            <Loader />
+          ) : (
+            products?.map((item, i) => (
+              <Product key={item.rows[0].id} product={item} i={i} />
+            ))
+          )}
         </div>
       </main>
     </div>

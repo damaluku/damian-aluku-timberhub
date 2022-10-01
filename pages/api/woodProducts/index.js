@@ -2,6 +2,13 @@
 
 import woodData from "../../../data/data.json";
 
+const DataStore = require("nedb");
+
+const database = new DataStore("dataStore.json");
+// const database = new DataStore("./data/dataStore.json");
+database.loadDatabase();
+// database.insert({ name: "freddy", age: "28" });
+
 const handler = (req, res) => {
   if (req.method === "GET") {
     res.status(200).json(woodData);
@@ -37,7 +44,10 @@ const handler = (req, res) => {
     };
 
     woodData.push(newProduct);
-    res.status(201).json(newProduct);
+    res.status(200).json(newProduct);
+    database.insert(newProduct);
+
+    console.log("response sent!");
   }
 };
 

@@ -39,9 +39,19 @@ export const Container = styled.div`
     display: flex;
     gap: 1rem;
 
-    div {
+    span {
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: gray;
+      padding: 4px;
+      background: #f4f4f6;
+      border-radius: 5px;
+
+      span {
+        color: #707786;
+      }
     }
   }
 `;

@@ -18,9 +18,15 @@ const product = ({ product, i }) => {
       </div>
       <div>
         <div className="dimentions">
-          <span>1 {product?.rows[0].dimensions[0].thickness}</span>
-          <span>2 {product?.rows[0].dimensions[0].width}</span>
-          <span>3 {product?.rows[0].dimensions[0].length}</span>
+          {product?.rows.map((row) => {
+            return row.dimensions.map((item, i) => (
+              <div key={i + 0.2}>
+                <span>
+                  <span>{i + 1}</span> {item.thickness} x {item.width}
+                </span>
+              </div>
+            ));
+          })}
         </div>
       </div>
     </Container>
