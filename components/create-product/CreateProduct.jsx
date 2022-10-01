@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "../../styles/createProduct.module.css";
+
 import { GiDeadWood } from "react-icons/gi";
 import { GiPerspectiveDiceSixFacesOne } from "react-icons/gi";
 import { GiWoodPile } from "react-icons/gi";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const CreateProduct = ({ setIsCreateOpen }) => {
   const [products, setProducts] = useState([]);
@@ -49,7 +51,7 @@ const CreateProduct = ({ setIsCreateOpen }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.createContainer}>
       <div className={styles.formContainer}>
         <h4>Create product</h4>
 
@@ -167,6 +169,10 @@ const CreateProduct = ({ setIsCreateOpen }) => {
                 />
               </div>
             </div>
+            <span className={styles.addButton} disabled>
+              <AiOutlinePlus />
+              <span>Add another set</span>
+            </span>
           </div>
 
           <button type="submit">create Product</button>

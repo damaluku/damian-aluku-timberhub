@@ -2,13 +2,13 @@ import React from "react";
 // import { Container } from "./navbar.styles";
 import styles from "../../styles/NavBar.module.css";
 
-import { FaAddressBook } from "react-icons/fa";
+import { GiSnakeSpiral } from "react-icons/gi";
 
 const NavBar = () => {
   return (
-    <nav className={styles.container}>
+    <nav className={styles.navContainer}>
       <div>
-        <FaAddressBook /> <span>Timberhub</span>
+        <GiSnakeSpiral /> <span>Timberhub</span>
       </div>
     </nav>
   );

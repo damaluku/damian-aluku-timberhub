@@ -4,7 +4,11 @@ import styles from "../../styles/SearchBar.module.css";
 
 const SearchBar = () => {
   return (
-    <input className={styles.container} placeholder="Search" type="text" />
+    <input
+      className={styles.searchContainer}
+      placeholder="Search"
+      type="text"
+    />
   );
 };
 

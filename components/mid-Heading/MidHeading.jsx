@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { Container } from "./midHeading.styles";
 import styles from "../../styles/MidHeading.module.css";
+
 import { AiOutlinePlus } from "react-icons/ai";
 import CreateProduct from "../create-product/CreateProduct";
 
