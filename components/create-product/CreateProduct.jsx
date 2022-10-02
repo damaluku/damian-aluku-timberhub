@@ -23,11 +23,10 @@ const CreateProduct = ({ setIsCreateOpen }) => {
     setProducts(data);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    //no need to prevent default so for submits and updates the UI
 
     fetchProducts();
-    console.log(products);
 
     const response = await fetch(`/api/woodProducts`, {
       method: "POST",
@@ -47,7 +46,7 @@ const CreateProduct = ({ setIsCreateOpen }) => {
     });
 
     const data = await response.json();
-    console.log(data);
+    alert("Product created successfully.");
   };
 
   return (
