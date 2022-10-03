@@ -23,8 +23,9 @@ const CreateProduct = ({ setIsCreateOpen }) => {
     setProducts(data);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
     //no need to prevent default so for submits and updates the UI
+    event.preventDefault();
 
     fetchProducts();
 

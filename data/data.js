@@ -1,4 +1,4 @@
-export const woodDataObject = [
+export const woodData = [
   {
     rows: [
       {

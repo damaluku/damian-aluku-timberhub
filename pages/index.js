@@ -30,6 +30,7 @@ export default function Home() {
           name="description"
           content="Damian Aluku Timberhub Front End Exercise"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -55,52 +56,3 @@ export default function Home() {
     </div>
   );
 }
-
-/* const fetchProducts = async () => {
-  const response = await fetch("http://localhost:3000/api/woodProducts");
-  // const response = await fetch("api/woodProducts");
-  const data = await response.json();
-
-  return data;
-};
-
-export const getServerSideProps = async () => {
-  const products = await fetchProducts();
-
-  if (!products) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      products,
-    },
-  };
-}; */
-
-/* const fetchProducts = async () => {
-  console.log("revalidating post list...");
-  const response = await fetch("http://localhost:3000/api/woodProducts");
-  const data = await response.json();
-
-  return data;
-};
-
-export const getStaticProps = async () => {
-  const products = await fetchProducts();
-
-  if (!products) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      products,
-    },
-    revalidate: 2,
-  };
-}; */
