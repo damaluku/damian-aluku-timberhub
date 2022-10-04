@@ -27,8 +27,6 @@ const CreateProduct = ({ setIsCreateOpen }) => {
     //no need to prevent default so for submits and updates the UI
     event.preventDefault();
 
-    fetchProducts();
-
     const response = await fetch(`/api/woodProducts`, {
       method: "POST",
       headers: {
@@ -48,6 +46,8 @@ const CreateProduct = ({ setIsCreateOpen }) => {
 
     const data = await response.json();
     alert("Product created successfully.");
+
+    fetchProducts();
   };
 
   return (
