@@ -1,8 +1,6 @@
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 import MidHeading from "../components/mid-Heading/MidHeading";
-import NavBar from "../components/navbar/NavBar";
 import SearchBar from "../components/search-bar/SearchBar";
 import Product from "../components/product/Product";
 import useSWR from "swr";
@@ -24,17 +22,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Timberhub Front End Exercise</title>
-        <meta
-          name="description"
-          content="Damian Aluku Timberhub Front End Exercise"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <NavBar />
       <main className={styles.main}>
         <MidHeading />
         <SearchBar />
